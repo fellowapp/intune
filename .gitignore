@@ -1,5 +1,6 @@
 # node files
-dist
+# temporarily commit dist for testing until we build an npm package
+# dist
 node_modules
 
 # iOS files

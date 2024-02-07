@@ -1,0 +1,119 @@
+{
+  "api": {
+    "name": "IntunePlugin",
+    "slug": "intuneplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "loginAndEnrollAccount",
+        "signature": "(options: { email: string; }) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ email: string; }"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "loginandenrollaccount"
+      },
+      {
+        "name": "registerAndEnrollAccount",
+        "signature": "(options: { email: string; }) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ email: string; }"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "registerandenrollaccount"
+      },
+      {
+        "name": "deRegisterAndUnenrollAccount",
+        "signature": "(options: { email: string; withWipe: boolean; }) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ email: string; withWipe: boolean; }"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "deregisterandunenrollaccount"
+      },
+      {
+        "name": "deRegisterAndUnenrollAccountId",
+        "signature": "(options: { accountId: string; withWipe: boolean; }) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ accountId: string; withWipe: boolean; }"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "deregisterandunenrollaccountid"
+      },
+      {
+        "name": "openIntuneConsole",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "openintuneconsole"
+      },
+      {
+        "name": "getEnrolledAccount",
+        "signature": "() => Promise<{ account?: string; }>",
+        "parameters": [],
+        "returns": "Promise<{ account?: string | undefined; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "getenrolledaccount"
+      },
+      {
+        "name": "getEnrolledAccountId",
+        "signature": "() => Promise<{ accountId?: string; }>",
+        "parameters": [],
+        "returns": "Promise<{ accountId?: string | undefined; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "getenrolledaccountid"
+      },
+      {
+        "name": "getEnrolledAccountIds",
+        "signature": "() => Promise<{ accountIds?: string[]; }>",
+        "parameters": [],
+        "returns": "Promise<{ accountIds?: string[] | undefined; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "getenrolledaccountids"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}

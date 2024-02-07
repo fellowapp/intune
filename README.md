@@ -123,12 +123,12 @@ getEnrolledAccountIds() => Promise<{ accountIds?: string[]; }>
 </docgen-api>
 
 
-
+# Follow all instructions in:
 https://learn.microsoft.com/en-us/mem/intune/developer/app-sdk-ios-phase3
+
+as instructed add
 > com.microsoft.intune.mam
-> 
 
 > Include each protocol that your app passes to UIApplication canOpenURL in the LSApplicationQueriesSchemes array of your app's Info.plist file. For each protocol listed in this array, a copy of the protocol appended with -
-
 
 > If your app doesn't use FaceID already, ensure the NSFaceIDUsageDescription Info.plist key is configured with a default message. This is required so iOS can let the user know how the app intends to use FaceID. An Intune app protection policy setting allows for FaceID to be used as a method for app access when configured by the IT admin.
