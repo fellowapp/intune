@@ -2,7 +2,7 @@ import { registerPlugin } from '@capacitor/core';
 
 import type { IntunePlugin } from './definitions';
 
-const Intune = registerPlugin<IntunePlugin>('Intune', {
+const Intune = registerPlugin<IntunePlugin>('@fellow/Intune', {
   web: () => import('./web').then(m => new m.IntuneWeb()),
 });
 

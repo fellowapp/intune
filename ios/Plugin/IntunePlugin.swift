@@ -9,10 +9,54 @@ import Capacitor
 public class IntunePlugin: CAPPlugin {
     private let implementation = Intune()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
+    @objc func loginAndEnrollAccount(_ call: CAPPluginCall) {
+        let email = call.getString("email") ?? ""
+        implementation.loginAndEnrollAccount(email)
+        call.resolve()
+    }
+
+    @objc func registerAndEnrollAccount(_ call: CAPPluginCall) {
+        let email = call.getString("email") ?? ""
+        implementation.registerAndEnrollAccount(email)
+        call.resolve()
+    }
+
+    @objc func deRegisterAndUnenrollAccount(_ call: CAPPluginCall) {
+        let email = call.getString("email") ?? ""
+        let wipe = call.getBool("withWipe") ?? true
+        // TODO: Error instead of defaulting to true for withWipe
+        implementation.deRegisterAndUnenrollAccount(email, withWipe)
+        call.resolve()
+    }
+
+    @objc func deRegisterAndUnenrollAccountId(_ call: CAPPluginCall) {
+        let accountId = call.getString("accountId") ?? ""
+        let wipe = call.getBool("withWipe") ?? true
+        // TODO: Error instead of defaulting to true for withWipe
+        implementation.deRegisterAndUnenrollAccountId(accountId, withWipe)
+        call.resolve()
+    }
+
+    @objc func openIntuneConsole(_ call: CAPPluginCall) {
+        implementation.openIntuneConsole()
+        call.resolve()
+    }
+
+    @objc func getEnrolledAccount(_ call: CAPPluginCall) {
         call.resolve([
-            "value": implementation.echo(value)
+            "account": implementation.getEnrolledAccount()
+        ])
+    }
+
+    @objc func getEnrolledAccountId(_ call: CAPPluginCall) {
+        call.resolve([
+            "accountId": implementation.getEnrolledAccountId()
+        ])
+    }
+
+    @objc func getEnrolledAccountIds(_ call: CAPPluginCall) {
+        call.resolve([
+            "accountIds": implementation.getEnrolledAccountIds()
         ])
     }
 }

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "50ADFF90201F53D600D50D53"
-               BuildableName = "PluginTests.xctest"
+               BuildableName = "PluginTests"
                BlueprintName = "PluginTests"
                ReferencedContainer = "container:Plugin.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "50ADFF90201F53D600D50D53"
-               BuildableName = "PluginTests.xctest"
+               BuildableName = "PluginTests"
                BlueprintName = "PluginTests"
                ReferencedContainer = "container:Plugin.xcodeproj">
             </BuildableReference>
