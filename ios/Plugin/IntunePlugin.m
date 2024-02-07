@@ -3,7 +3,7 @@
 
 // Define the plugin using the CAP_PLUGIN Macro, and
 // each method the plugin supports using the CAP_PLUGIN_METHOD macro.
-CAP_PLUGIN(IntunePlugin, "Intune",
+CAP_PLUGIN(IntunePlugin, "@fellow/Intune",
            CAP_PLUGIN_METHOD(loginAndEnrollAccount, CAPPluginReturnNone);
            CAP_PLUGIN_METHOD(registerAndEnrollAccount, CAPPluginReturnNone);
            CAP_PLUGIN_METHOD(deRegisterAndUnenrollAccount, CAPPluginReturnNone);
