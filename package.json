@@ -11,7 +11,7 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "Intune.podspec",
+    "FellowIntune.podspec",
     "install.mjs"
   ],
   "author": "Fellow Insights Inc",

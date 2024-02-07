@@ -39,7 +39,10 @@ class IntuneWeb extends core.WebPlugin {
     }
     async getEnrolledAccountIds() {
         this.unimplemented('UNIMPLEMENTED');
-        return {};
+        return { accountIds: [] };
+    }
+    async isSupportedPlatform() {
+        return { supported: false };
     }
 }
 

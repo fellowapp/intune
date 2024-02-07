@@ -101,13 +101,23 @@
       },
       {
         "name": "getEnrolledAccountIds",
-        "signature": "() => Promise<{ accountIds?: string[]; }>",
+        "signature": "() => Promise<{ accountIds: string[]; }>",
         "parameters": [],
-        "returns": "Promise<{ accountIds?: string[] | undefined; }>",
+        "returns": "Promise<{ accountIds: string[]; }>",
         "tags": [],
         "docs": "",
         "complexTypes": [],
         "slug": "getenrolledaccountids"
+      },
+      {
+        "name": "isSupportedPlatform",
+        "signature": "() => Promise<{ supported: boolean; }>",
+        "parameters": [],
+        "returns": "Promise<{ supported: boolean; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "issupportedplatform"
       }
     ],
     "properties": []

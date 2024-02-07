@@ -38,8 +38,12 @@ export class IntuneWeb extends WebPlugin implements IntunePlugin {
     return {};
   }
 
-  async getEnrolledAccountIds(): Promise<{ accountIds?: string[] }> {
+  async getEnrolledAccountIds(): Promise<{ accountIds: string[] }> {
     this.unimplemented('UNIMPLEMENTED');
-    return {};
+    return { accountIds: [] };
+  }
+
+  async isSupportedPlatform(): Promise<{ supported: boolean }> {
+    return { supported: false };
   }
 }

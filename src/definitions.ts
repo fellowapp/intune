@@ -6,5 +6,6 @@ export interface IntunePlugin {
   openIntuneConsole(): Promise<void>;
   getEnrolledAccount(): Promise<{ account?: string }>;
   getEnrolledAccountId(): Promise<{ accountId?: string }>;
-  getEnrolledAccountIds(): Promise<{ accountIds?: string[] }>;
+  getEnrolledAccountIds(): Promise<{ accountIds: string[] }>;
+  isSupportedPlatform(): Promise<{ supported: boolean }>;
 }

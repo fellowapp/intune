@@ -59,4 +59,8 @@ public class IntunePlugin: CAPPlugin {
             "accountIds": implementation.getEnrolledAccountIds()
         ])
     }
+
+    @objc func isSupportedPlatform(_ call: CAPPluginCall) {
+        calll.resolve([ "supported": true ])
+    }
 }

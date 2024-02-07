@@ -21,6 +21,7 @@ npx cap sync
 * [`getEnrolledAccount()`](#getenrolledaccount)
 * [`getEnrolledAccountId()`](#getenrolledaccountid)
 * [`getEnrolledAccountIds()`](#getenrolledaccountids)
+* [`isSupportedPlatform()`](#issupportedplatform)
 
 </docgen-index>
 
@@ -113,10 +114,21 @@ getEnrolledAccountId() => Promise<{ accountId?: string; }>
 ### getEnrolledAccountIds()
 
 ```typescript
-getEnrolledAccountIds() => Promise<{ accountIds?: string[]; }>
+getEnrolledAccountIds() => Promise<{ accountIds: string[]; }>
 ```
 
-**Returns:** <code>Promise&lt;{ accountIds?: string[]; }&gt;</code>
+**Returns:** <code>Promise&lt;{ accountIds: string[]; }&gt;</code>
+
+--------------------
+
+
+### isSupportedPlatform()
+
+```typescript
+isSupportedPlatform() => Promise<{ supported: boolean; }>
+```
+
+**Returns:** <code>Promise&lt;{ supported: boolean; }&gt;</code>
 
 --------------------
 

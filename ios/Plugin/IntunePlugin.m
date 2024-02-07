@@ -10,7 +10,8 @@ CAP_PLUGIN(IntunePlugin, "@fellow/Intune",
            CAP_PLUGIN_METHOD(deRegisterAndUnenrollAccountId, CAPPluginReturnNone);
 
            CAP_PLUGIN_METHOD(openIntuneConsole, CAPPluginReturnNone);
-           CAP_PLUGIN_METHOD(getEnrolledAccount, CAPPluginReturnNone);
-           CAP_PLUGIN_METHOD(getEnrolledAccountId, CAPPluginReturnNone);
-           CAP_PLUGIN_METHOD(getEnrolledAccountIds, CAPPluginReturnNone);
+           CAP_PLUGIN_METHOD(getEnrolledAccount, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getEnrolledAccountId, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getEnrolledAccountIds, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(isSupportedPlatform, CAPPluginReturnPromise);
 )

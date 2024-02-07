@@ -23,6 +23,9 @@ export declare class IntuneWeb extends WebPlugin implements IntunePlugin {
         accountId?: string;
     }>;
     getEnrolledAccountIds(): Promise<{
-        accountIds?: string[];
+        accountIds: string[];
+    }>;
+    isSupportedPlatform(): Promise<{
+        supported: boolean;
     }>;
 }

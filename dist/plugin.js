@@ -36,7 +36,10 @@ var capacitorIntune = (function (exports, core) {
         }
         async getEnrolledAccountIds() {
             this.unimplemented('UNIMPLEMENTED');
-            return {};
+            return { accountIds: [] };
+        }
+        async isSupportedPlatform() {
+            return { supported: false };
         }
     }
 
