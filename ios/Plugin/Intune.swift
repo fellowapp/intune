@@ -25,11 +25,11 @@ public func test() {
     }
 
     @objc public func deRegisterAndUnenrollAccount(_ email: String, withWipe: Bool) {
-        enrollmentManagerInstance.deRegisterAndUnenrollAccount(email, withWipe)
+        enrollmentManagerInstance.deRegisterAndUnenrollAccount(email, withWipe: withWipe)
     }
 
     @objc public func deRegisterAndUnenrollAccountId(_ id: String, withWipe: Bool) {
-        enrollmentManagerInstance.deRegisterAndUnenrollAccountId(id, withWipe)
+        enrollmentManagerInstance.deRegisterAndUnenrollAccountId(id, withWipe: withWipe)
     }
 
     @objc public func getSetting(_ key: String) -> Bool {

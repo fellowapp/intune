@@ -23,17 +23,17 @@ public class IntunePlugin: CAPPlugin {
 
     @objc func deRegisterAndUnenrollAccount(_ call: CAPPluginCall) {
         let email = call.getString("email") ?? ""
-        let wipe = call.getBool("withWipe") ?? true
+        let withWipe = call.getBool("withWipe") ?? true
         // TODO: Error instead of defaulting to true for withWipe
-        implementation.deRegisterAndUnenrollAccount(email, withWipe)
+        implementation.deRegisterAndUnenrollAccount(email, withWipe: withWipe)
         call.resolve()
     }
 
     @objc func deRegisterAndUnenrollAccountId(_ call: CAPPluginCall) {
         let accountId = call.getString("accountId") ?? ""
-        let wipe = call.getBool("withWipe") ?? true
+        let withWipe = call.getBool("withWipe") ?? true
         // TODO: Error instead of defaulting to true for withWipe
-        implementation.deRegisterAndUnenrollAccountId(accountId, withWipe)
+        implementation.deRegisterAndUnenrollAccountId(accountId, withWipe: withWipe)
         call.resolve()
     }
 
