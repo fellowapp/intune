@@ -61,6 +61,6 @@ public class IntunePlugin: CAPPlugin {
     }
 
     @objc func isSupportedPlatform(_ call: CAPPluginCall) {
-        calll.resolve([ "supported": true ])
+        call.resolve([ "supported": true ])
     }
 }
