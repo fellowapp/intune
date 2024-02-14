@@ -1,18 +1,18 @@
 import Foundation
 import IntuneMAMSwift
 
-public func test() {
-    let enrollmentDelegate = EnrollmentDelegateClass.init()
+public func test(plugin: IntunePlugin) {
+    let enrollmentDelegate = EnrollmentDelegateClass.init(plugin: plugin)
     IntuneMAMEnrollmentManager.instance().delegate = enrollmentDelegate
 
     IntuneMAMEnrollmentManager.instance().loginAndEnrollAccount(nil)
 }
 
 @objc public class Intune: NSObject {
-    private let enrollmentManagerInstance = IntuneMAMEnrollmentManager.instance()
+    private var enrollmentManagerInstance = IntuneMAMEnrollmentManager.instance()
 
-    override init() {
-        let enrollmentDelegate = EnrollmentDelegateClass.init()
+    init(plugin: IntunePlugin) {
+        let enrollmentDelegate = EnrollmentDelegateClass.init(plugin: plugin)
         enrollmentManagerInstance.delegate = enrollmentDelegate
     }
 

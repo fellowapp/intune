@@ -2,9 +2,11 @@ import IntuneMAMSwift
 
 
 class EnrollmentDelegateClass: NSObject, IntuneMAMEnrollmentDelegate {
+    private var plugin: IntunePlugin?
 
-    override init() {
+    init(plugin: IntunePlugin) {
         super.init()
+        self.plugin = plugin
     }
 
     func enrollmentRequest(with status: IntuneMAMEnrollmentStatus) {
@@ -18,8 +20,13 @@ class EnrollmentDelegateClass: NSObject, IntuneMAMEnrollmentDelegate {
             print("Debug message: \(String(describing: status.errorString))")
             print(IntuneMAMEnrollmentManager.instance().enrolledAccount())
             print(IntuneMAMEnrollmentManager.instance().mdmEnrolledAccount())
-            
         }
+        self.plugin!.notifyListeners("enrollmentResult", data: [
+            "statusCode": status.statusCode,
+            "didSucceed": status.didSucceed,
+            "description": status.description,
+        ])
+
     }
 
     func unenrollRequest(with status: IntuneMAMEnrollmentStatus) {
