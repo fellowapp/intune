@@ -22,6 +22,8 @@ npx cap sync
 * [`getEnrolledAccountId()`](#getenrolledaccountid)
 * [`getEnrolledAccountIds()`](#getenrolledaccountids)
 * [`isSupportedPlatform()`](#issupportedplatform)
+* [`addListener('enrollmentResult', ...)`](#addlistenerenrollmentresult)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -131,6 +133,32 @@ isSupportedPlatform() => Promise<{ supported: boolean; }>
 **Returns:** <code>Promise&lt;{ supported: boolean; }&gt;</code>
 
 --------------------
+
+
+### addListener('enrollmentResult', ...)
+
+```typescript
+addListener(eventName: "enrollmentResult", listenerFunc: (status: { statusCode: number; didSucceed: boolean; description: string; }) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+```
+
+| Param              | Type                                                                                                |
+| ------------------ | --------------------------------------------------------------------------------------------------- |
+| **`eventName`**    | <code>'enrollmentResult'</code>                                                                     |
+| **`listenerFunc`** | <code>(status: { statusCode: number; didSucceed: boolean; description: string; }) =&gt; void</code> |
+
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+--------------------
+
+
+### Interfaces
+
+
+#### PluginListenerHandle
+
+| Prop         | Type                                      |
+| ------------ | ----------------------------------------- |
+| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
 
 </docgen-api>
 

@@ -1,3 +1,5 @@
+import { PluginListenerHandle } from "@capacitor/core";
+
 export interface IntunePlugin {
   loginAndEnrollAccount(options: { email: string }): Promise<void>;
   registerAndEnrollAccount(options: { email: string }): Promise<void>;
@@ -8,4 +10,6 @@ export interface IntunePlugin {
   getEnrolledAccountId(): Promise<{ accountId?: string }>;
   getEnrolledAccountIds(): Promise<{ accountIds: string[] }>;
   isSupportedPlatform(): Promise<{ supported: boolean }>;
+
+  addListener(eventName: "enrollmentResult", listenerFunc: (status: { statusCode: number; didSucceed: boolean; description: string }) => void): Promise<PluginListenerHandle> & PluginListenerHandle;
 }

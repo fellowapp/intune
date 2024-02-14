@@ -1,3 +1,4 @@
+import { PluginListenerHandle } from "@capacitor/core";
 export interface IntunePlugin {
     loginAndEnrollAccount(options: {
         email: string;
@@ -26,4 +27,9 @@ export interface IntunePlugin {
     isSupportedPlatform(): Promise<{
         supported: boolean;
     }>;
+    addListener(eventName: "enrollmentResult", listenerFunc: (status: {
+        statusCode: number;
+        didSucceed: boolean;
+        description: string;
+    }) => void): Promise<PluginListenerHandle> & PluginListenerHandle;
 }

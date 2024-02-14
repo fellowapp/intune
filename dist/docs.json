@@ -118,11 +118,51 @@
         "docs": "",
         "complexTypes": [],
         "slug": "issupportedplatform"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: \"enrollmentResult\", listenerFunc: (status: { statusCode: number; didSucceed: boolean; description: string; }) => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'enrollmentResult'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(status: { statusCode: number; didSucceed: boolean; description: string; }) => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle> & PluginListenerHandle",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PluginListenerHandle"
+        ],
+        "slug": "addlistenerenrollmentresult"
       }
     ],
     "properties": []
   },
-  "interfaces": [],
+  "interfaces": [
+    {
+      "name": "PluginListenerHandle",
+      "slug": "pluginlistenerhandle",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "remove",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "() => Promise<void>"
+        }
+      ]
+    }
+  ],
   "enums": [],
   "typeAliases": [],
   "pluginConfigs": []
