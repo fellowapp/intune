@@ -22,11 +22,11 @@ class EnrollmentDelegateClass: NSObject, IntuneMAMEnrollmentDelegate {
             print(IntuneMAMEnrollmentManager.instance().mdmEnrolledAccount())
         }
         self.plugin!.notifyListeners("enrollmentResult", data: [
-            "statusCode": status.statusCode,
+            "identity": status.identity,
+            "statusCode": status.statusCode.rawValue,
             "didSucceed": status.didSucceed,
-            "description": status.description,
+            "errorString": status.errorString,
         ])
-
     }
 
     func unenrollRequest(with status: IntuneMAMEnrollmentStatus) {

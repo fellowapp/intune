@@ -28,8 +28,9 @@ export interface IntunePlugin {
         supported: boolean;
     }>;
     addListener(eventName: "enrollmentResult", listenerFunc: (status: {
+        identity: string;
         statusCode: number;
         didSucceed: boolean;
-        description: string;
+        errorString: string;
     }) => void): Promise<PluginListenerHandle> & PluginListenerHandle;
 }

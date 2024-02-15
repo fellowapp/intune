@@ -11,5 +11,5 @@ export interface IntunePlugin {
   getEnrolledAccountIds(): Promise<{ accountIds: string[] }>;
   isSupportedPlatform(): Promise<{ supported: boolean }>;
 
-  addListener(eventName: "enrollmentResult", listenerFunc: (status: { statusCode: number; didSucceed: boolean; description: string }) => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(eventName: "enrollmentResult", listenerFunc: (status: { identity: string; statusCode: number; didSucceed: boolean; errorString: string }) => void): Promise<PluginListenerHandle> & PluginListenerHandle;
 }

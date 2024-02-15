@@ -121,7 +121,7 @@
       },
       {
         "name": "addListener",
-        "signature": "(eventName: \"enrollmentResult\", listenerFunc: (status: { statusCode: number; didSucceed: boolean; description: string; }) => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "signature": "(eventName: \"enrollmentResult\", listenerFunc: (status: { identity: string; statusCode: number; didSucceed: boolean; errorString: string; }) => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
         "parameters": [
           {
             "name": "eventName",
@@ -131,7 +131,7 @@
           {
             "name": "listenerFunc",
             "docs": "",
-            "type": "(status: { statusCode: number; didSucceed: boolean; description: string; }) => void"
+            "type": "(status: { identity: string; statusCode: number; didSucceed: boolean; errorString: string; }) => void"
           }
         ],
         "returns": "Promise<PluginListenerHandle> & PluginListenerHandle",

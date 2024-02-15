@@ -138,13 +138,13 @@ isSupportedPlatform() => Promise<{ supported: boolean; }>
 ### addListener('enrollmentResult', ...)
 
 ```typescript
-addListener(eventName: "enrollmentResult", listenerFunc: (status: { statusCode: number; didSucceed: boolean; description: string; }) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "enrollmentResult", listenerFunc: (status: { identity: string; statusCode: number; didSucceed: boolean; errorString: string; }) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
-| Param              | Type                                                                                                |
-| ------------------ | --------------------------------------------------------------------------------------------------- |
-| **`eventName`**    | <code>'enrollmentResult'</code>                                                                     |
-| **`listenerFunc`** | <code>(status: { statusCode: number; didSucceed: boolean; description: string; }) =&gt; void</code> |
+| Param              | Type                                                                                                                  |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| **`eventName`**    | <code>'enrollmentResult'</code>                                                                                       |
+| **`listenerFunc`** | <code>(status: { identity: string; statusCode: number; didSucceed: boolean; errorString: string; }) =&gt; void</code> |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
