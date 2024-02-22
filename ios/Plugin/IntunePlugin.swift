@@ -68,4 +68,16 @@ public class IntunePlugin: CAPPlugin {
     @objc func isSupportedPlatform(_ call: CAPPluginCall) {
         call.resolve([ "supported": true ])
     }
+    
+    func hasBeenUnenrolled() {
+        guard let cookieStore = self.webView?.configuration.websiteDataStore.httpCookieStore else {
+            print("Error getting webview to handle un-enroll")
+            return;
+        }
+        cookieStore.getAllCookies { cookies in
+            for cookie in cookies {
+                cookieStore.delete(cookie)
+            }
+        }
+    }
 }
