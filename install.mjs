@@ -2,7 +2,9 @@ import { createWriteStream } from 'fs';
 import fetch from 'node-fetch';
 import StreamZip from 'node-stream-zip';
 
-const url = 'https://github.com/microsoftconnect/ms-intune-app-sdk-ios/archive/refs/tags/19.5.0.zip';
+const version = `19.5.0`;
+
+const url = `https://github.com/microsoftconnect/ms-intune-app-sdk-ios/archive/refs/tags/${version}.zip`;
 
 await fetch(url).then(async res => {
   res.body.pipe(createWriteStream('main.zip'));
@@ -13,19 +15,19 @@ await fetch(url).then(async res => {
   const zip = new StreamZip.async({ file: 'main.zip' });
   // console.log(Object.values((await zip.entries())).filter(entry => entry.name.includes('IntuneMAMConfigurator')));
   await zip.extract(
-    'ms-intune-app-sdk-ios-main/IntuneMAMConfigurator',
+    `ms-intune-app-sdk-ios-${version}/IntuneMAMConfigurator`,
     './ios/IntuneMAMConfigurator',
   );
   await zip.extract(
-    'ms-intune-app-sdk-ios-main/IntuneMAMSwift.xcframework',
+    `ms-intune-app-sdk-ios-${version}/IntuneMAMSwift.xcframework`,
     './ios/IntuneMAMSwift.xcframework',
   );
   await zip.extract(
-    'ms-intune-app-sdk-ios-main/IntuneMAMSwiftStub.xcframework',
+    `ms-intune-app-sdk-ios-${version}/IntuneMAMSwiftStub.xcframework`,
     './ios/IntuneMAMSwiftStub.xcframework',
   );
   await zip.extract(
-    'ms-intune-app-sdk-ios-main/IntuneMAMResources.bundle',
+    `ms-intune-app-sdk-ios-${version}/IntuneMAMResources.bundle`,
     './ios/IntuneMAMResources.bundle',
   );
 });
