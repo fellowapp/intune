@@ -8,12 +8,16 @@ public func test(plugin: IntunePlugin) {
     IntuneMAMEnrollmentManager.instance().loginAndEnrollAccount(nil)
 }
 
+
 @objc public class Intune: NSObject {
     private var enrollmentManagerInstance = IntuneMAMEnrollmentManager.instance()
+    private var complianceManagerInstance = IntuneMAMComplianceManager.instance()
 
     init(plugin: IntunePlugin) {
         let enrollmentDelegate = EnrollmentDelegateClass.init(plugin: plugin)
         enrollmentManagerInstance.delegate = enrollmentDelegate
+        let complianceDelegate = ComplianceDelegate.init()
+        complianceManagerInstance.delegate = complianceDelegate;
     }
 
     @objc public func loginAndEnrollAccount(_ email: String) {
