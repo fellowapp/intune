@@ -2,8 +2,7 @@ import { createWriteStream } from 'fs';
 import fetch from 'node-fetch';
 import StreamZip from 'node-stream-zip';
 
-const url =
-  'https://github.com/msintuneappsdk/ms-intune-app-sdk-ios/archive/refs/heads/main.zip';
+const url = 'https://github.com/microsoftconnect/ms-intune-app-sdk-ios/archive/refs/tags/19.5.0.zip';
 
 await fetch(url).then(async res => {
   res.body.pipe(createWriteStream('main.zip'));
